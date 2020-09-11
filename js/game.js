@@ -100,10 +100,20 @@ class Game{
                      
                  }
                  
-                  if (player.index !== null) {
-                     //fill code here, to destroy the objects.
-                     
-                  }
+                     if (player.index !== null && fruitGroup.contains(fruits)) {
+                          //fill code here, to destroy the objects. 
+                          for (var i = 0;i<=fruitGroup.maxDepth();i++){
+                               var temp=fruitGroup.get(i); 
+                            if(temp !== undefined && temp.isTouching(player1)){
+                                 temp.destroy();
+                                 score1++; } 
+
+                                 if(temp !== undefined && temp.isTouching(player2)){
+                                      temp.destroy(); score2++; 
+                                    } 
+                                } 
+                            }
+
             
     }
 
